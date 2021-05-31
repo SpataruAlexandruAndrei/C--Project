@@ -1,0 +1,5 @@
+Nume: Rotaru
+Prenume: Mihaela
+Username: Miha
+Email: miha@gmail.com
+Numar telefon: 0723834201
