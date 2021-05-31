@@ -73,11 +73,11 @@ namespace Magazin_Hardware
                 foreach (ListViewItem itm in lv_prod.Items)
                 {
                     int ID = Convert.ToInt32(itm.SubItems[0].Text);
-                    comanda.CommandText = "SELECT ID FROM [Cos] WHERE ID = " + ID;
+                    comanda.CommandText = "SELECT ID_Produs FROM [Cos] WHERE ID_Produs = " + ID;
                     int id = Convert.ToInt32(comanda.ExecuteScalar());
                     if (itm.Selected && Convert.ToInt32(itm.SubItems[0].Text) == id)
                     {
-                        comanda.CommandText = "UPDATE [Cos] SET CANTITATE = CANTITATE +" + 1 + " WHERE ID = " + id;
+                        comanda.CommandText = "UPDATE [Cos] SET CANTITATE = CANTITATE +" + 1 + " WHERE ID_Produs = " + id;
                         comanda.ExecuteScalar();
                         MessageBox.Show("Ai adaugat inca un produs de tipul:" + itm.SubItems[1].Text + "!");
                     }
@@ -85,16 +85,20 @@ namespace Magazin_Hardware
                     {
                         int Id = 0, Cantitate =1 ;
                         string denumire = "";
+                        string detalii = "";
                         double Pret = 0;
                         comanda.CommandText = "SELECT ID FROM [Componente] WHERE ID=" + Convert.ToInt32(itm.SubItems[0].Text);
                         Id = Convert.ToInt32(comanda.ExecuteScalar());
                         comanda.CommandText = "SELECT DENUMIRE FROM [Componente] WHERE ID=" + Id;
                         denumire = Convert.ToString(comanda.ExecuteScalar());
+                        comanda.CommandText = "SELECT DETALII FROM [Componente] WHERE ID=" + Id;
+                        detalii = Convert.ToString(comanda.ExecuteScalar());
                         comanda.CommandText = "SELECT PRET FROM [Componente] WHERE ID=" + Id;
                         Pret = Convert.ToDouble(comanda.ExecuteScalar());
-                        comanda.CommandText = "INSERT INTO [Cos] VALUES(?,?,?,?,?)";
-                        comanda.Parameters.Add("ID", OleDbType.Integer).Value = Id;
+                        comanda.CommandText = "INSERT INTO [Cos] VALUES(?,?,?,?,?,?)";
+                        comanda.Parameters.Add("ID_PRODUS", OleDbType.Integer).Value = Id;
                         comanda.Parameters.Add("ID_CLIENT", OleDbType.Integer).Value = idUser;
+                        comanda.Parameters.Add("DETALII_PRODUS", OleDbType.Char, 255).Value = detalii;
                         comanda.Parameters.Add("DENUMIRE", OleDbType.Char, 255).Value = denumire;
                         comanda.Parameters.Add("PRET", OleDbType.Double).Value = Pret;
                         comanda.Parameters.Add("CANTITATE", OleDbType.Integer).Value = Cantitate; 

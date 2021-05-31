@@ -31,21 +31,23 @@ namespace Magazin_Hardware
         {
             this.lv_cart = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_comanda = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.lb_valoareC = new System.Windows.Forms.Label();
+            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lv_cart
             // 
             this.lv_cart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader52,
+            this.columnHeader23,
+            this.columnHeader34,
+            this.columnHeader5});
             this.lv_cart.GridLines = true;
             this.lv_cart.HideSelection = false;
             this.lv_cart.Location = new System.Drawing.Point(378, 127);
@@ -60,20 +62,21 @@ namespace Magazin_Hardware
             this.columnHeader1.Text = "Cod Produs";
             this.columnHeader1.Width = 235;
             // 
-            // columnHeader2
+            // columnHeader23
             // 
-            this.columnHeader2.Text = "Denumire";
-            this.columnHeader2.Width = 235;
+            this.columnHeader23.DisplayIndex = 1;
+            this.columnHeader23.Text = "Denumire";
+            this.columnHeader23.Width = 235;
             // 
-            // columnHeader3
+            // columnHeader34
             // 
-            this.columnHeader3.Text = "Pret";
-            this.columnHeader3.Width = 235;
+            this.columnHeader34.Text = "Pret";
+            this.columnHeader34.Width = 235;
             // 
-            // columnHeader4
+            // columnHeader5
             // 
-            this.columnHeader4.Text = "Cantitate";
-            this.columnHeader4.Width = 235;
+            this.columnHeader5.Text = "Cantitate";
+            this.columnHeader5.Width = 235;
             // 
             // btn_comanda
             // 
@@ -83,6 +86,7 @@ namespace Magazin_Hardware
             this.btn_comanda.TabIndex = 1;
             this.btn_comanda.Text = "Plaseaza comanda";
             this.btn_comanda.UseVisualStyleBackColor = true;
+            this.btn_comanda.Click += new System.EventHandler(this.btn_comanda_Click);
             // 
             // btn_delete
             // 
@@ -104,6 +108,12 @@ namespace Magazin_Hardware
             this.lb_valoareC.TabIndex = 3;
             this.lb_valoareC.Text = "Total Comnda :";
             // 
+            // columnHeader52
+            // 
+            this.columnHeader52.DisplayIndex = 2;
+            this.columnHeader52.Text = "Detalii produs";
+            this.columnHeader52.Width = 235;
+            // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -124,11 +134,12 @@ namespace Magazin_Hardware
 
         private System.Windows.Forms.ListView lv_cart;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader34;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button btn_comanda;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Label lb_valoareC;
+        private System.Windows.Forms.ColumnHeader columnHeader52;
     }
 }

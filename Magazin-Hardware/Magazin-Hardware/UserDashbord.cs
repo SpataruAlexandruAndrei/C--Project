@@ -17,8 +17,6 @@ namespace Magazin_Hardware
     public partial class UserDashbord : Form
     {
         private Form activeForm = null;
-        private List<Componente> componente = new List<Componente>();
-        private const string compPath = "comp.bin";
         private static int idUser;
 
         public UserDashbord(int id)
@@ -118,6 +116,12 @@ namespace Magazin_Hardware
             {
                 conexiune.Close();
             }
+        }
+
+        private void btn_comenzi_Click(object sender, EventArgs e)
+        {
+            VizualizareComenziUser form = new VizualizareComenziUser(idUser);
+            openChildForm(form);
         }
     }
 }

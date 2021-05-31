@@ -31,7 +31,7 @@ namespace Magazin_Hardware
         {
             this.panel_show = new System.Windows.Forms.Panel();
             this.panel_subMenu_profil_btns = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_comenzi = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btn_profil = new System.Windows.Forms.Button();
             this.panel_subMenu_Prod_btns = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@ namespace Magazin_Hardware
             // panel_subMenu_profil_btns
             // 
             this.panel_subMenu_profil_btns.BackColor = System.Drawing.Color.LightYellow;
-            this.panel_subMenu_profil_btns.Controls.Add(this.button5);
+            this.panel_subMenu_profil_btns.Controls.Add(this.btn_comenzi);
             this.panel_subMenu_profil_btns.Controls.Add(this.button6);
             this.panel_subMenu_profil_btns.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_subMenu_profil_btns.Location = new System.Drawing.Point(0, 440);
@@ -65,21 +65,22 @@ namespace Magazin_Hardware
             this.panel_subMenu_profil_btns.TabIndex = 0;
             this.panel_subMenu_profil_btns.Visible = false;
             // 
-            // button5
+            // btn_comenzi
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(0, 60);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(263, 60);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Comenzile mele";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_comenzi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.btn_comenzi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_comenzi.FlatAppearance.BorderSize = 0;
+            this.btn_comenzi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_comenzi.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_comenzi.ForeColor = System.Drawing.Color.Black;
+            this.btn_comenzi.Location = new System.Drawing.Point(0, 60);
+            this.btn_comenzi.Name = "btn_comenzi";
+            this.btn_comenzi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_comenzi.Size = new System.Drawing.Size(263, 60);
+            this.btn_comenzi.TabIndex = 9;
+            this.btn_comenzi.Text = "Comenzile mele";
+            this.btn_comenzi.UseVisualStyleBackColor = false;
+            this.btn_comenzi.Click += new System.EventHandler(this.btn_comenzi_Click);
             // 
             // button6
             // 
@@ -227,7 +228,7 @@ namespace Magazin_Hardware
         private System.Windows.Forms.Button btn_prod;
         private System.Windows.Forms.Panel panel_subMenu_profil_btns;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_comenzi;
         private System.Windows.Forms.Panel panel_subMenu_Prod_btns;
         private System.Windows.Forms.Button btn_vizualizare;
         private System.Windows.Forms.Panel panel2;

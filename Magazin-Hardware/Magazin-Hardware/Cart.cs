@@ -14,6 +14,7 @@ namespace Magazin_Hardware
     public partial class Cart : Form
     {
         private static int idUser;
+
         public Cart(int id)
         {
             InitializeComponent();
@@ -73,8 +74,9 @@ namespace Magazin_Hardware
                     OleDbDataReader reader = comanda.ExecuteReader();
                     while (reader.Read())
                     {
-                        ListViewItem itm = new ListViewItem(reader["ID"].ToString());
+                        ListViewItem itm = new ListViewItem(reader["ID_Produs"].ToString());
                         itm.SubItems.Add(reader["Denumire"].ToString());
+                        itm.SubItems.Add(reader["Detalii_Produs"].ToString());
                         itm.SubItems.Add(reader["Pret"].ToString());
                         itm.SubItems.Add(reader["Cantitate"].ToString());
                         lv_cart.Items.Add(itm);
@@ -138,6 +140,24 @@ namespace Magazin_Hardware
             {
                 conexiune.Close();
             }
+        }
+
+        private void btn_comanda_Click(object sender, EventArgs e)
+        {
+            double sum = displayVal();
+            List<Componente> lista = new List<Componente>();
+            Componente c = new Componente(); 
+            foreach (ListViewItem itm in lv_cart.Items)
+            {
+                c.Denumire = itm.SubItems[1].Text;
+                c.Detalii = itm.SubItems[2].Text;
+                c.Pret = Convert.ToDouble(itm.SubItems[3].Text);
+                c.Cantitate = Convert.ToInt32(itm.SubItems[4].Text);
+                lista.Add(c);
+            }
+            PlasareComanda pc = new PlasareComanda(idUser, sum, lista);
+            pc.Show();
+            refresh();
         }
     }
 }

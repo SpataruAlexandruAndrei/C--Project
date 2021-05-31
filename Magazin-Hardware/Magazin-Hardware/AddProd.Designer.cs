@@ -41,7 +41,6 @@ namespace Magazin_Hardware
             this.label6 = new System.Windows.Forms.Label();
             this.tb_cantitate = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
-            this.btn_anulare = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -138,27 +137,13 @@ namespace Magazin_Hardware
             this.btn_add.BackColor = System.Drawing.Color.White;
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(471, 402);
+            this.btn_add.Location = new System.Drawing.Point(572, 401);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(116, 48);
             this.btn_add.TabIndex = 10;
             this.btn_add.Text = "Adauga";
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
-            // btn_anulare
-            // 
-            this.btn_anulare.BackColor = System.Drawing.Color.Red;
-            this.btn_anulare.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_anulare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_anulare.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btn_anulare.Location = new System.Drawing.Point(660, 402);
-            this.btn_anulare.Name = "btn_anulare";
-            this.btn_anulare.Size = new System.Drawing.Size(116, 48);
-            this.btn_anulare.TabIndex = 11;
-            this.btn_anulare.Text = "Cancel";
-            this.btn_anulare.UseVisualStyleBackColor = false;
-            this.btn_anulare.Click += new System.EventHandler(this.btn_anulare_Click);
             // 
             // errorProvider1
             // 
@@ -169,7 +154,6 @@ namespace Magazin_Hardware
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 722);
-            this.Controls.Add(this.btn_anulare);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.tb_cantitate);
             this.Controls.Add(this.label6);
@@ -202,7 +186,6 @@ namespace Magazin_Hardware
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_cantitate;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_anulare;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

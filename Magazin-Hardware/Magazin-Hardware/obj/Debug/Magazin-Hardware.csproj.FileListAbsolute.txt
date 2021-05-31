@@ -16,3 +16,5 @@ C:\Users\Bulbuc\Desktop\Anul 2\semestru 2\PAW\paw\Proiect(eu)\Magazin-Hardware\M
 C:\Users\Bulbuc\Desktop\Anul 2\semestru 2\PAW\paw\Proiect(eu)\Magazin-Hardware\Magazin-Hardware\obj\Debug\Magazin_Hardware.EditareProdus.resources
 C:\Users\Bulbuc\Desktop\Anul 2\semestru 2\PAW\paw\Proiect(eu)\Magazin-Hardware\Magazin-Hardware\obj\Debug\Magazin_Hardware.AfisareProdUSer.resources
 C:\Users\Bulbuc\Desktop\Anul 2\semestru 2\PAW\paw\Proiect(eu)\Magazin-Hardware\Magazin-Hardware\obj\Debug\Magazin_Hardware.Cart.resources
+C:\Users\Bulbuc\Desktop\Anul 2\semestru 2\PAW\paw\Proiect(eu)\Magazin-Hardware\Magazin-Hardware\obj\Debug\Magazin_Hardware.PlasareComanda.resources
+C:\Users\Bulbuc\Desktop\Anul 2\semestru 2\PAW\paw\Proiect(eu)\Magazin-Hardware\Magazin-Hardware\obj\Debug\Magazin_Hardware.VizualizareComenziUser.resources
