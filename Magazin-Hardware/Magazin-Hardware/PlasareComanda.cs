@@ -93,17 +93,25 @@ namespace Magazin_Hardware
                     comanda.ExecuteNonQuery();
                     MessageBox.Show("da");
 
+
                     comanda1.CommandText = "SELECT MAX(ID) FROM [Istoric_Produse_Comandate]";
                     int idIstoric = Convert.ToInt32(comanda1.ExecuteScalar());
-                    foreach(Componente c in lista)
+                    foreach (Componente c in lista)
                     {
-                        comanda1.CommandText = "INSERT INTO [Istoric_Produse_Comandate] VALUES(?,?,?,?,?,?)";
-                        comanda1.Parameters.Add("ID", OleDbType.Integer).Value = idIstoric + 1;
-                        comanda1.Parameters.Add("ID_Comanda", OleDbType.Integer).Value = idComanda + 1;
-                        comanda1.Parameters.Add("Denumire_Produs", OleDbType.Char, 255).Value = c.Denumire;
-                        comanda1.Parameters.Add("Detalii_Produs", OleDbType.Char, 255).Value = c.Detalii;
-                        comanda1.Parameters.Add("Pret_Produs", OleDbType.Double).Value = c.Pret;
-                        comanda1.Parameters.Add("Cantitate_Comandata", OleDbType.Integer).Value = c.Cantitate;
+                        OleDbCommand comanda2 = new OleDbCommand();
+                        comanda2.Connection = conexiune;
+                        comanda2.CommandText = "INSERT INTO [Istoric_Produse_Comandate] VALUES(?,?,?,?,?,?,?)";
+                        comanda2.Parameters.Add("ID", OleDbType.Integer).Value = idIstoric + 1;
+                        comanda2.Parameters.Add("ID_Produs", OleDbType.Integer).Value = c.Id;
+                        comanda2.Parameters.Add("ID_Comanda", OleDbType.Integer).Value = idComanda + 1;
+                        comanda2.Parameters.Add("Denumire_Produs", OleDbType.Char, 255).Value = c.Denumire;
+                        comanda2.Parameters.Add("Detalii_Produs", OleDbType.Char, 255).Value = c.Detalii;
+                        comanda2.Parameters.Add("Pret_Produs", OleDbType.Double).Value = c.Pret;
+                        comanda2.Parameters.Add("Cantitate_Comandata", OleDbType.Integer).Value = c.Cantitate;
+                        comanda2.CommandText = "Update [Componente] SET CANTITATE = CANTITATE - " + c.Cantitate + " WHERE ID = " + c.Id;
+                        comanda2.ExecuteScalar();
+                        comanda2.ExecuteNonQuery();
+                        idIstoric++;
                         //comanda.ExecuteNonQuery();
                     }
                     comanda1.ExecuteNonQuery();
@@ -143,6 +151,8 @@ namespace Magazin_Hardware
                     conexiune.Open();
                     OleDbCommand comanda = new OleDbCommand();
                     comanda.Connection = conexiune;
+                    OleDbCommand comanda1 = new OleDbCommand();
+                    comanda1.Connection = conexiune;
                     string nume, prenume, email, telefon, adresa;
                     DateTime date = DateTime.Now;
                     DateTime date1 = date.AddDays(3);
@@ -155,7 +165,7 @@ namespace Magazin_Hardware
                     comanda.CommandText = "SELECT Numar_Telefon FROM [User] WHERE ID = " + idUser;
                     telefon = Convert.ToString(comanda.ExecuteScalar());
                     adresa = "Judetul: " + tb_jud.Text + ", Localitatea: " + tb_loc.Text + ", Adresa: " + tb_adresa.Text;
-                    comanda.CommandText = "SELECT MAX(Id) FROM [Comenzi]";
+                    comanda.CommandText = "SELECT MAX(ID_Comanda) FROM [Comenzi]";
                     int idComanda = Convert.ToInt32(comanda.ExecuteScalar());
                     comanda.CommandText = "INSERT INTO [Comenzi] VALUES(?,?,?,?,?,?,?,?,?,?)";
                     comanda.Parameters.Add("ID_Comanda", OleDbType.Integer).Value = idComanda + 1;
@@ -170,23 +180,31 @@ namespace Magazin_Hardware
                     comanda.Parameters.Add("Comanda_Finalizata", OleDbType.Boolean).Value = false;
                     comanda.ExecuteNonQuery();
                     MessageBox.Show("da");
-                    comanda.CommandText = "SELECT MAX(Id) FROM [Istoric_Produse_Comandate]";
-                    int idIstoric = Convert.ToInt32(comanda.ExecuteScalar());
-                    comanda.CommandText = "INSERT INTO [Istoric_Produse_Comandate] VALUES(?,?,?,?,?,?)";
+
+                    comanda1.CommandText = "SELECT MAX(ID) FROM [Istoric_Produse_Comandate]";
+                    int idIstoric = Convert.ToInt32(comanda1.ExecuteScalar());
                     foreach (Componente c in lista)
                     {
-                        comanda.Parameters.Add("ID", OleDbType.Integer).Value = idIstoric + 1;
-                        comanda.Parameters.Add("ID_Comanda", OleDbType.Integer).Value = idComanda + 1;
-                        comanda.Parameters.Add("Denumire_Produs", OleDbType.Char, 255).Value = c.Denumire;
-                        comanda.Parameters.Add("Detalii_Produs", OleDbType.Char, 255).Value = c.Detalii;
-                        comanda.Parameters.Add("Pret_Produs", OleDbType.Double).Value = c.Pret;
-                        comanda.Parameters.Add("Cantitate_Comandata", OleDbType.Integer).Value = c.Cantitate;
+                        OleDbCommand comanda2 = new OleDbCommand();
+                        comanda2.Connection = conexiune;
+                        comanda2.CommandText = "INSERT INTO [Istoric_Produse_Comandate] VALUES(?,?,?,?,?,?,?)";
+                        comanda2.Parameters.Add("ID", OleDbType.Integer).Value = idIstoric + 1;
+                        comanda2.Parameters.Add("ID_Produs", OleDbType.Integer).Value = c.Id;
+                        comanda2.Parameters.Add("ID_Comanda", OleDbType.Integer).Value = idComanda + 1;
+                        comanda2.Parameters.Add("Denumire_Produs", OleDbType.Char, 255).Value = c.Denumire;
+                        comanda2.Parameters.Add("Detalii_Produs", OleDbType.Char, 255).Value = c.Detalii;
+                        comanda2.Parameters.Add("Pret_Produs", OleDbType.Double).Value = c.Pret;
+                        comanda2.Parameters.Add("Cantitate_Comandata", OleDbType.Integer).Value = c.Cantitate;
+                        comanda2.CommandText = "Update [Componente] SET CANTITATE = CANTITATE - " + c.Cantitate + " WHERE ID = " + c.Id;
+                        comanda2.ExecuteScalar();
+                        comanda2.ExecuteNonQuery();
+                        idIstoric++;
                     }
-                    comanda.ExecuteNonQuery();
+                    //comanda1.ExecuteNonQuery();
                     MessageBox.Show("da");
 
-                    comanda.CommandText = "DELETE FROM [Cos] WHERE ID_Client = " + idUser;
-                    comanda.ExecuteNonQuery();
+                    comanda1.CommandText = "DELETE FROM [Cos] WHERE ID_Client = " + idUser;
+                    comanda1.ExecuteNonQuery();
                     MessageBox.Show("da");
                 }
                 catch (OleDbException ex)

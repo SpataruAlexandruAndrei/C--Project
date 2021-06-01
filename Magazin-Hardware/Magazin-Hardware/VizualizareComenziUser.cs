@@ -85,30 +85,38 @@ namespace Magazin_Hardware
                         }
                         TreeNode t6 = tv_comenzi.Nodes[0].Nodes.Add("Produs/e comandate");
                         int produse = 0;
-                        comanda1.CommandText = "SELECT COUNT(ID_Comanda) FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda;
+                        comanda1.CommandText = "SELECT COUNT(ID) FROM [Istoric_Produse_Comandate]";
                         produse = Convert.ToInt32(comanda1.ExecuteScalar());
+                        int idIstoric = 1;
                         for (int j = 0; j < produse; j++)
                         {
-                            int cod = 0;
-                            comanda1.CommandText = "SELECT ID FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda;
-                            cod = Convert.ToInt32(comanda1.ExecuteScalar());
-                            TreeNode t7 = tv_comenzi.Nodes[0].Nodes[4].Nodes.Add("Cod produs: " + cod.ToString());
-                            string denumire = "";
-                            comanda1.CommandText = "SELECT Denumire_Produs FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda;
-                            denumire = Convert.ToString(comanda1.ExecuteScalar());
-                            t7.Nodes.Add("Denumire produs: " + denumire);
-                            string detalii = "";
-                            comanda1.CommandText = "SELECT Detalii_Produs FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda;
-                            detalii = Convert.ToString(comanda1.ExecuteScalar());
-                            t7.Nodes.Add("Detalii produs: " + detalii);
-                            double pret = 0;
-                            comanda1.CommandText = "SELECT Pret_produs FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda;
-                            pret = Convert.ToDouble(comanda1.ExecuteScalar());
-                            t7.Nodes.Add("Pret produs: " + pret.ToString());
-                            int nr = 0;
-                            comanda1.CommandText = "SELECT Cantitate_Comandata FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda;
-                            nr = Convert.ToInt32(comanda1.ExecuteScalar());
-                            t7.Nodes.Add("Cantitate comandata: " + nr);
+                            int idprob = 0;
+                            comanda1.CommandText = "SELECT ID_Comanda FROM [Istoric_Produse_Comandate] WHERE ID = " + idIstoric;
+                            idprob = Convert.ToInt32(comanda1.ExecuteScalar());
+                            if(idprob == idComanda)
+                            {
+                                int cod = 0;
+                                comanda1.CommandText = "SELECT ID_Produs FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda + " AND ID = " + idIstoric;
+                                cod = Convert.ToInt32(comanda1.ExecuteScalar());
+                                TreeNode t7 = tv_comenzi.Nodes[0].Nodes[4].Nodes.Add("Cod produs: " + cod.ToString());
+                                string denumire = "";
+                                comanda1.CommandText = "SELECT Denumire_Produs FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda + " AND ID = " + idIstoric;
+                                denumire = Convert.ToString(comanda1.ExecuteScalar());
+                                t7.Nodes.Add("Denumire produs: " + denumire);
+                                string detalii = "";
+                                comanda1.CommandText = "SELECT Detalii_Produs FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda + " AND ID = " + idIstoric;
+                                detalii = Convert.ToString(comanda1.ExecuteScalar());
+                                t7.Nodes.Add("Detalii produs: " + detalii);
+                                double pret = 0;
+                                comanda1.CommandText = "SELECT Pret_produs FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda + " AND ID = " + idIstoric;
+                                pret = Convert.ToDouble(comanda1.ExecuteScalar());
+                                t7.Nodes.Add("Pret produs: " + pret.ToString());
+                                int nr = 0;
+                                comanda1.CommandText = "SELECT Cantitate_Comandata FROM [Istoric_Produse_Comandate] WHERE ID_Comanda = " + idComanda + " AND ID = " + idIstoric;
+                                nr = Convert.ToInt32(comanda1.ExecuteScalar());
+                                t7.Nodes.Add("Cantitate comandata: " + nr);
+                            }
+                            idIstoric++;
                         }
                     }
                     idComanda++;
@@ -126,6 +134,11 @@ namespace Magazin_Hardware
             {
                 conexiune.Close();
             }
+        }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

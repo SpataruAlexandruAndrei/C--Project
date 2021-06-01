@@ -36,6 +36,7 @@ namespace Magazin_Hardware
             this.Cantitate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lv_prod = new System.Windows.Forms.ListView();
             this.btn_add_cart = new System.Windows.Forms.Button();
+            this.bt_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ID
@@ -90,14 +91,30 @@ namespace Magazin_Hardware
             this.btn_add_cart.UseVisualStyleBackColor = true;
             this.btn_add_cart.Click += new System.EventHandler(this.btn_add_cart_Click);
             // 
+            // bt_exit
+            // 
+            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
+            this.bt_exit.FlatAppearance.BorderSize = 0;
+            this.bt_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_exit.Image = global::Magazin_Hardware.Properties.Resources.x;
+            this.bt_exit.Location = new System.Drawing.Point(1495, 12);
+            this.bt_exit.Name = "bt_exit";
+            this.bt_exit.Size = new System.Drawing.Size(58, 58);
+            this.bt_exit.TabIndex = 9;
+            this.bt_exit.UseVisualStyleBackColor = false;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
+            // 
             // AfisareProdUSer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1675, 722);
+            this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.btn_add_cart);
             this.Controls.Add(this.lv_prod);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AfisareProdUSer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AfisareProdUSer";
             this.ResumeLayout(false);
 
@@ -112,5 +129,6 @@ namespace Magazin_Hardware
         private System.Windows.Forms.ColumnHeader Cantitate;
         private System.Windows.Forms.ListView lv_prod;
         private System.Windows.Forms.Button btn_add_cart;
+        private System.Windows.Forms.Button bt_exit;
     }
 }

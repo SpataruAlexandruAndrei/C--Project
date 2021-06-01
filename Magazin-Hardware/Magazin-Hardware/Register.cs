@@ -242,5 +242,10 @@ namespace Magazin_Hardware
         {
             tbConfirmPassword.UseSystemPasswordChar = true;
         }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

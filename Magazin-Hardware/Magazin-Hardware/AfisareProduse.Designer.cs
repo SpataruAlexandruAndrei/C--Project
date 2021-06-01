@@ -37,6 +37,7 @@ namespace Magazin_Hardware
             this.Detalii = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pret = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Cantitate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bt_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_edit
@@ -105,15 +106,31 @@ namespace Magazin_Hardware
             this.Cantitate.Text = "Cantitate";
             this.Cantitate.Width = 235;
             // 
+            // bt_exit
+            // 
+            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
+            this.bt_exit.FlatAppearance.BorderSize = 0;
+            this.bt_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_exit.Image = global::Magazin_Hardware.Properties.Resources.x;
+            this.bt_exit.Location = new System.Drawing.Point(1133, 6);
+            this.bt_exit.Name = "bt_exit";
+            this.bt_exit.Size = new System.Drawing.Size(58, 58);
+            this.bt_exit.TabIndex = 8;
+            this.bt_exit.UseVisualStyleBackColor = false;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
+            // 
             // AfisareProduse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1235, 722);
+            this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.lv_prod);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AfisareProduse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AfisareProduse";
             this.ResumeLayout(false);
 
@@ -128,5 +145,6 @@ namespace Magazin_Hardware
         private System.Windows.Forms.ColumnHeader Detalii;
         private System.Windows.Forms.ColumnHeader Pret;
         private System.Windows.Forms.ColumnHeader Cantitate;
+        private System.Windows.Forms.Button bt_exit;
     }
 }

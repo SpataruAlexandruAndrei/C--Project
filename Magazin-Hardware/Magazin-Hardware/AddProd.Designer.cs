@@ -42,6 +42,7 @@ namespace Magazin_Hardware
             this.tb_cantitate = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bt_exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,11 +150,25 @@ namespace Magazin_Hardware
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // bt_exit
+            // 
+            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
+            this.bt_exit.FlatAppearance.BorderSize = 0;
+            this.bt_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_exit.Image = global::Magazin_Hardware.Properties.Resources.x;
+            this.bt_exit.Location = new System.Drawing.Point(739, 12);
+            this.bt_exit.Name = "bt_exit";
+            this.bt_exit.Size = new System.Drawing.Size(58, 58);
+            this.bt_exit.TabIndex = 11;
+            this.bt_exit.UseVisualStyleBackColor = false;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
+            // 
             // AddProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 722);
+            this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.tb_cantitate);
             this.Controls.Add(this.label6);
@@ -165,7 +180,9 @@ namespace Magazin_Hardware
             this.Controls.Add(this.tb_nume);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddProd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProd";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -187,5 +204,6 @@ namespace Magazin_Hardware
         private System.Windows.Forms.TextBox tb_cantitate;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button bt_exit;
     }
 }

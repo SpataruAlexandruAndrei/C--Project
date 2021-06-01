@@ -123,5 +123,18 @@ namespace Magazin_Hardware
             VizualizareComenziUser form = new VizualizareComenziUser(idUser);
             openChildForm(form);
         }
+
+        private void btn_logOut_Click(object sender, EventArgs e)
+        {
+            ((Form)this.TopLevelControl).Close();
+            this.Hide();
+            Form1 logIn = new Form1();
+            logIn.ShowDialog();
+        }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

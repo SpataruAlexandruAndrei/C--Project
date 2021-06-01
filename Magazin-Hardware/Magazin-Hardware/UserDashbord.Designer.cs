@@ -32,7 +32,7 @@ namespace Magazin_Hardware
             this.panel_show = new System.Windows.Forms.Panel();
             this.panel_subMenu_profil_btns = new System.Windows.Forms.Panel();
             this.btn_comenzi = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_logOut = new System.Windows.Forms.Button();
             this.btn_profil = new System.Windows.Forms.Button();
             this.panel_subMenu_Prod_btns = new System.Windows.Forms.Panel();
             this.btn_vizualizare = new System.Windows.Forms.Button();
@@ -40,6 +40,8 @@ namespace Magazin_Hardware
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_prod = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bt_exit = new System.Windows.Forms.Button();
+            this.panel_show.SuspendLayout();
             this.panel_subMenu_profil_btns.SuspendLayout();
             this.panel_subMenu_Prod_btns.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -47,6 +49,7 @@ namespace Magazin_Hardware
             // 
             // panel_show
             // 
+            this.panel_show.Controls.Add(this.bt_exit);
             this.panel_show.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_show.Location = new System.Drawing.Point(0, 0);
             this.panel_show.Name = "panel_show";
@@ -57,7 +60,7 @@ namespace Magazin_Hardware
             // 
             this.panel_subMenu_profil_btns.BackColor = System.Drawing.Color.LightYellow;
             this.panel_subMenu_profil_btns.Controls.Add(this.btn_comenzi);
-            this.panel_subMenu_profil_btns.Controls.Add(this.button6);
+            this.panel_subMenu_profil_btns.Controls.Add(this.btn_logOut);
             this.panel_subMenu_profil_btns.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_subMenu_profil_btns.Location = new System.Drawing.Point(0, 440);
             this.panel_subMenu_profil_btns.Name = "panel_subMenu_profil_btns";
@@ -82,21 +85,22 @@ namespace Magazin_Hardware
             this.btn_comenzi.UseVisualStyleBackColor = false;
             this.btn_comenzi.Click += new System.EventHandler(this.btn_comenzi_Click);
             // 
-            // button6
+            // btn_logOut
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(263, 60);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Log Out";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_logOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.btn_logOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_logOut.FlatAppearance.BorderSize = 0;
+            this.btn_logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logOut.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logOut.ForeColor = System.Drawing.Color.Black;
+            this.btn_logOut.Location = new System.Drawing.Point(0, 0);
+            this.btn_logOut.Name = "btn_logOut";
+            this.btn_logOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_logOut.Size = new System.Drawing.Size(263, 60);
+            this.btn_logOut.TabIndex = 10;
+            this.btn_logOut.Text = "Log Out";
+            this.btn_logOut.UseVisualStyleBackColor = false;
+            this.btn_logOut.Click += new System.EventHandler(this.btn_logOut_Click);
             // 
             // btn_profil
             // 
@@ -203,6 +207,19 @@ namespace Magazin_Hardware
             this.panel2.Size = new System.Drawing.Size(263, 173);
             this.panel2.TabIndex = 6;
             // 
+            // bt_exit
+            // 
+            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
+            this.bt_exit.FlatAppearance.BorderSize = 0;
+            this.bt_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_exit.Image = global::Magazin_Hardware.Properties.Resources.x;
+            this.bt_exit.Location = new System.Drawing.Point(1561, 3);
+            this.bt_exit.Name = "bt_exit";
+            this.bt_exit.Size = new System.Drawing.Size(58, 58);
+            this.bt_exit.TabIndex = 1;
+            this.bt_exit.UseVisualStyleBackColor = false;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
+            // 
             // UserDashbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,8 +227,11 @@ namespace Magazin_Hardware
             this.ClientSize = new System.Drawing.Size(1622, 769);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel_show);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserDashbord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserDashbord";
+            this.panel_show.ResumeLayout(false);
             this.panel_subMenu_profil_btns.ResumeLayout(false);
             this.panel_subMenu_Prod_btns.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -227,10 +247,11 @@ namespace Magazin_Hardware
         private System.Windows.Forms.Button btn_cart;
         private System.Windows.Forms.Button btn_prod;
         private System.Windows.Forms.Panel panel_subMenu_profil_btns;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_logOut;
         private System.Windows.Forms.Button btn_comenzi;
         private System.Windows.Forms.Panel panel_subMenu_Prod_btns;
         private System.Windows.Forms.Button btn_vizualizare;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button bt_exit;
     }
 }

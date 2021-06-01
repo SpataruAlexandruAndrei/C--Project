@@ -30,26 +30,42 @@ namespace Magazin_Hardware
         private void InitializeComponent()
         {
             this.panel_show = new System.Windows.Forms.Panel();
+            this.bt_exit = new System.Windows.Forms.Button();
             this.btn_profil = new System.Windows.Forms.Button();
             this.panel_subMenu_Prod_btns = new System.Windows.Forms.Panel();
             this.btn_stat = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_vizualizare = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_comenziAdmin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_prod = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_show.SuspendLayout();
             this.panel_subMenu_Prod_btns.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_show
             // 
+            this.panel_show.Controls.Add(this.bt_exit);
             this.panel_show.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_show.Location = new System.Drawing.Point(264, 0);
             this.panel_show.Name = "panel_show";
             this.panel_show.Size = new System.Drawing.Size(1358, 769);
             this.panel_show.TabIndex = 3;
+            // 
+            // bt_exit
+            // 
+            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
+            this.bt_exit.FlatAppearance.BorderSize = 0;
+            this.bt_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_exit.Image = global::Magazin_Hardware.Properties.Resources.x;
+            this.bt_exit.Location = new System.Drawing.Point(1288, 12);
+            this.bt_exit.Name = "bt_exit";
+            this.bt_exit.Size = new System.Drawing.Size(58, 58);
+            this.bt_exit.TabIndex = 0;
+            this.bt_exit.UseVisualStyleBackColor = false;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
             // btn_profil
             // 
@@ -97,6 +113,7 @@ namespace Magazin_Hardware
             this.btn_stat.TabIndex = 8;
             this.btn_stat.Text = "Statistici";
             this.btn_stat.UseVisualStyleBackColor = false;
+            this.btn_stat.Click += new System.EventHandler(this.btn_stat_Click);
             // 
             // btn_add
             // 
@@ -132,27 +149,28 @@ namespace Magazin_Hardware
             this.btn_vizualizare.UseVisualStyleBackColor = false;
             this.btn_vizualizare.Click += new System.EventHandler(this.btn_vizualizare_Click);
             // 
-            // button2
+            // btn_comenziAdmin
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(0, 434);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(264, 60);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Comenzi";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_comenziAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.btn_comenziAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_comenziAdmin.FlatAppearance.BorderSize = 0;
+            this.btn_comenziAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_comenziAdmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_comenziAdmin.ForeColor = System.Drawing.Color.Black;
+            this.btn_comenziAdmin.Location = new System.Drawing.Point(0, 434);
+            this.btn_comenziAdmin.Name = "btn_comenziAdmin";
+            this.btn_comenziAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_comenziAdmin.Size = new System.Drawing.Size(264, 60);
+            this.btn_comenziAdmin.TabIndex = 2;
+            this.btn_comenziAdmin.Text = "Comenzi";
+            this.btn_comenziAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_comenziAdmin.UseVisualStyleBackColor = false;
+            this.btn_comenziAdmin.Click += new System.EventHandler(this.btn_comenziAdmin_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btn_profil);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btn_comenziAdmin);
             this.panel3.Controls.Add(this.panel_subMenu_Prod_btns);
             this.panel3.Controls.Add(this.btn_prod);
             this.panel3.Controls.Add(this.panel2);
@@ -196,8 +214,11 @@ namespace Magazin_Hardware
             this.ClientSize = new System.Drawing.Size(1622, 769);
             this.Controls.Add(this.panel_show);
             this.Controls.Add(this.panel3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminDashbord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashbord";
+            this.panel_show.ResumeLayout(false);
             this.panel_subMenu_Prod_btns.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -212,9 +233,10 @@ namespace Magazin_Hardware
         private System.Windows.Forms.Button btn_stat;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_vizualizare;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_comenziAdmin;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_prod;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button bt_exit;
     }
 }

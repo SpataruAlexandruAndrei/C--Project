@@ -120,5 +120,10 @@ namespace Magazin_Hardware
                 conexiune.Close();
             }
         }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -103,6 +103,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Statistici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistici.Designer.cs">
+      <DependentUpon>Statistici.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserDashbord.cs">
       <SubType>Form</SubType>
@@ -153,6 +159,9 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Statistici.resx">
+      <DependentUpon>Statistici.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserDashbord.resx">
       <DependentUpon>UserDashbord.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Poza_comp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\101280971-cross-icon-in-circle-can-be-used-as-delete-block-close-button-etc-delete-x-cross-rounded-icon-is-fla.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

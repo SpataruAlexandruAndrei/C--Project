@@ -31,13 +31,14 @@ namespace Magazin_Hardware
         {
             this.lv_cart = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_comanda = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.lb_valoareC = new System.Windows.Forms.Label();
-            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bt_exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lv_cart
@@ -61,6 +62,12 @@ namespace Magazin_Hardware
             // 
             this.columnHeader1.Text = "Cod Produs";
             this.columnHeader1.Width = 235;
+            // 
+            // columnHeader52
+            // 
+            this.columnHeader52.DisplayIndex = 2;
+            this.columnHeader52.Text = "Detalii produs";
+            this.columnHeader52.Width = 235;
             // 
             // columnHeader23
             // 
@@ -108,22 +115,32 @@ namespace Magazin_Hardware
             this.lb_valoareC.TabIndex = 3;
             this.lb_valoareC.Text = "Total Comnda :";
             // 
-            // columnHeader52
+            // bt_exit
             // 
-            this.columnHeader52.DisplayIndex = 2;
-            this.columnHeader52.Text = "Detalii produs";
-            this.columnHeader52.Width = 235;
+            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
+            this.bt_exit.FlatAppearance.BorderSize = 0;
+            this.bt_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_exit.Image = global::Magazin_Hardware.Properties.Resources.x;
+            this.bt_exit.Location = new System.Drawing.Point(1499, 12);
+            this.bt_exit.Name = "bt_exit";
+            this.bt_exit.Size = new System.Drawing.Size(58, 58);
+            this.bt_exit.TabIndex = 8;
+            this.bt_exit.UseVisualStyleBackColor = false;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1675, 722);
+            this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.lb_valoareC);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_comanda);
             this.Controls.Add(this.lv_cart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cart";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cart";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,5 +158,6 @@ namespace Magazin_Hardware
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Label lb_valoareC;
         private System.Windows.Forms.ColumnHeader columnHeader52;
+        private System.Windows.Forms.Button bt_exit;
     }
 }

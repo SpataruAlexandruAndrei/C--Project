@@ -78,5 +78,9 @@ namespace Magazin_Hardware
             }
         }
 
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

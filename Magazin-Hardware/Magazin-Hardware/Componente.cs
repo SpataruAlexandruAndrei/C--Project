@@ -9,6 +9,7 @@ namespace Magazin_Hardware
     [Serializable]
     public partial class Componente: ICloneable, IComparable
     {
+        private int id;
         private string denumire;
         private string detalii;
         private double pret;
@@ -16,15 +17,16 @@ namespace Magazin_Hardware
 
         public Componente()
         {
-
+            Id = 0;
             Denumire = "N/A";
             Detalii = "N/A";
             Pret = 0;
             Cantitate = 0;
         }
 
-        public Componente(string denumire, string detalii, float pret, int cantitate)
+        public Componente(int id, string denumire, string detalii, float pret, int cantitate)
         {
+            this.Id = id;
             this.denumire = denumire;
             this.detalii = detalii;
             this.pret = pret;
@@ -35,6 +37,7 @@ namespace Magazin_Hardware
         public string Detalii { get => detalii; set => detalii = value; }
         public double Pret { get => pret; set => pret = value; }
         public int Cantitate { get => cantitate; set => cantitate = value; }
+        public int Id { get => id; set => id = value; }
 
         public Object Clone()
         {

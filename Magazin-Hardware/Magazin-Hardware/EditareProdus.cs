@@ -93,5 +93,10 @@ namespace Magazin_Hardware
 
             
         }
+
+        private void btn_anulare_Click(object sender, EventArgs e)
+        {
+            ((Form)this.TopLevelControl).Close();
+        }
     }
 }

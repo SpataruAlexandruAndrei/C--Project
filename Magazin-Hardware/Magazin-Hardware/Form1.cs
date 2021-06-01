@@ -121,5 +121,10 @@ namespace Magazin_Hardware
                 btnLogin_Click(sender, e);
             }
         }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

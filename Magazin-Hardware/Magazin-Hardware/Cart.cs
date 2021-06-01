@@ -146,9 +146,11 @@ namespace Magazin_Hardware
         {
             double sum = displayVal();
             List<Componente> lista = new List<Componente>();
-            Componente c = new Componente(); 
+            //Componente c = new Componente(); 
             foreach (ListViewItem itm in lv_cart.Items)
             {
+                Componente c = new Componente();
+                c.Id = Convert.ToInt32(itm.SubItems[0].Text);
                 c.Denumire = itm.SubItems[1].Text;
                 c.Detalii = itm.SubItems[2].Text;
                 c.Pret = Convert.ToDouble(itm.SubItems[3].Text);
@@ -158,6 +160,11 @@ namespace Magazin_Hardware
             PlasareComanda pc = new PlasareComanda(idUser, sum, lista);
             pc.Show();
             refresh();
+        }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

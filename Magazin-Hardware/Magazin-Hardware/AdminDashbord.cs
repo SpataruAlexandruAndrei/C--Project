@@ -84,5 +84,22 @@ namespace Magazin_Hardware
    
             openChildForm(form);
         }
+
+        private void btn_comenziAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_stat_Click(object sender, EventArgs e)
+        {
+            Statistici form = new Statistici();
+
+            openChildForm(form);
+        }
+
+        private void bt_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

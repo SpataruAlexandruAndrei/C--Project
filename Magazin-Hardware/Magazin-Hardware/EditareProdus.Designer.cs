@@ -58,6 +58,7 @@ namespace Magazin_Hardware
             this.btn_anulare.TabIndex = 23;
             this.btn_anulare.Text = "Cancel";
             this.btn_anulare.UseVisualStyleBackColor = false;
+            this.btn_anulare.Click += new System.EventHandler(this.btn_anulare_Click);
             // 
             // btn_edit
             // 
