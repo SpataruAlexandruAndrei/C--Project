@@ -31,6 +31,7 @@ namespace Magazin_Hardware
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_exit = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btn_inregistrare = new System.Windows.Forms.Button();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@ namespace Magazin_Hardware
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bt_exit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +78,19 @@ namespace Magazin_Hardware
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(427, 711);
             this.panel1.TabIndex = 0;
+            // 
+            // bt_exit
+            // 
+            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
+            this.bt_exit.FlatAppearance.BorderSize = 0;
+            this.bt_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_exit.Image = global::Magazin_Hardware.Properties.Resources.x;
+            this.bt_exit.Location = new System.Drawing.Point(370, 15);
+            this.bt_exit.Name = "bt_exit";
+            this.bt_exit.Size = new System.Drawing.Size(44, 48);
+            this.bt_exit.TabIndex = 17;
+            this.bt_exit.UseVisualStyleBackColor = false;
+            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
             // btnLogIn
             // 
@@ -240,19 +253,6 @@ namespace Magazin_Hardware
             // error
             // 
             this.error.ContainerControl = this;
-            // 
-            // bt_exit
-            // 
-            this.bt_exit.BackColor = System.Drawing.Color.Transparent;
-            this.bt_exit.FlatAppearance.BorderSize = 0;
-            this.bt_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_exit.Image = global::Magazin_Hardware.Properties.Resources.x;
-            this.bt_exit.Location = new System.Drawing.Point(370, 15);
-            this.bt_exit.Name = "bt_exit";
-            this.bt_exit.Size = new System.Drawing.Size(44, 48);
-            this.bt_exit.TabIndex = 17;
-            this.bt_exit.UseVisualStyleBackColor = false;
-            this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
             // Register
             // 

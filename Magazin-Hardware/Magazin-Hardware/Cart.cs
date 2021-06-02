@@ -166,5 +166,80 @@ namespace Magazin_Hardware
         {
             Application.Exit();
         }
+
+        private void stergeCu1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OleDbConnection conexiune = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source=BD_Proiect.accdb");
+            try
+            {
+                conexiune.Open();
+                OleDbCommand comanda = new OleDbCommand();
+                comanda.Connection = conexiune;
+                foreach (ListViewItem itm in lv_cart.Items)
+                {
+                    int ID = Convert.ToInt32(itm.SubItems[0].Text);
+                    comanda.CommandText = "SELECT Cantitate FROM [Cos] WHERE ID_Produs = " + ID + " AND ID_CLIENT = " + idUser;
+                    int cantitate = Convert.ToInt32(comanda.ExecuteScalar());
+                    if (itm.Selected && cantitate - 1 > 0)
+                    {
+                        comanda.CommandText = "UPDATE [Cos] SET CANTITATE = CANTITATE - " + 1 + " WHERE ID_Produs = " + ID;
+                        comanda.ExecuteScalar();
+                        MessageBox.Show("Cantiatea produsului: " + itm.SubItems[1].Text + "a scazut cu 1!");
+                    }
+                    else if (itm.Selected)
+                    {
+                        string pro = itm.SubItems[1].Text;
+                        comanda.CommandText = "DELETE FROM [Cos] WHERE DENUMIRE='" + pro + "'";
+                        comanda.ExecuteNonQuery();
+                        MessageBox.Show("Produsul a fost sters din cos!");
+                    }
+                }
+                refresh();
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexiune.Close();
+            }
+        }
+
+        private void stergeTotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OleDbConnection conexiune = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source=BD_Proiect.accdb");
+            try
+            {
+                conexiune.Open();
+                OleDbCommand comanda = new OleDbCommand();
+                comanda.Connection = conexiune;
+                foreach (ListViewItem itm in lv_cart.Items)
+                {
+                    int ID = Convert.ToInt32(itm.SubItems[0].Text);
+                    comanda.CommandText = "DELETE FROM [Cos] WHERE ID_Produs =" + ID;
+                    comanda.ExecuteNonQuery();
+                    MessageBox.Show("Produsul a fost sters din cos!");
+
+                }
+                refresh();
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexiune.Close();
+            }
+        }
     }
 }

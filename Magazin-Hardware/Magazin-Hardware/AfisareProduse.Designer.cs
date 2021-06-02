@@ -48,7 +48,7 @@ namespace Magazin_Hardware
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(133, 60);
             this.btn_edit.TabIndex = 1;
-            this.btn_edit.Text = "Edit";
+            this.btn_edit.Text = "&Edit";
             this.btn_edit.UseVisualStyleBackColor = false;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
@@ -60,7 +60,7 @@ namespace Magazin_Hardware
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(148, 60);
             this.btn_delete.TabIndex = 2;
-            this.btn_delete.Text = "Delete";
+            this.btn_delete.Text = "&Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 

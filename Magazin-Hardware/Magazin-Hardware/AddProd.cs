@@ -61,7 +61,7 @@ namespace Magazin_Hardware
                     comanda.Parameters.Add("Pret", OleDbType.Double).Value = Convert.ToDouble(tb_pret.Text);
                     comanda.Parameters.Add("Cantitate", OleDbType.Integer).Value = Convert.ToInt32(tb_cantitate.Text);
                     comanda.ExecuteNonQuery();
-                    MessageBox.Show("Produs editat cu succes!");
+                    MessageBox.Show("Produs adaugat cu succes!");
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);

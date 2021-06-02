@@ -29,6 +29,7 @@ namespace Magazin_Hardware
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lv_cart = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,6 +40,10 @@ namespace Magazin_Hardware
             this.btn_delete = new System.Windows.Forms.Button();
             this.lb_valoareC = new System.Windows.Forms.Label();
             this.bt_exit = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.stergeCu1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stergeTotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lv_cart
@@ -128,11 +133,35 @@ namespace Magazin_Hardware
             this.bt_exit.UseVisualStyleBackColor = false;
             this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stergeCu1ToolStripMenuItem,
+            this.stergeTotToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 80);
+            // 
+            // stergeCu1ToolStripMenuItem
+            // 
+            this.stergeCu1ToolStripMenuItem.Name = "stergeCu1ToolStripMenuItem";
+            this.stergeCu1ToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.stergeCu1ToolStripMenuItem.Text = "Sterge cu 1";
+            this.stergeCu1ToolStripMenuItem.Click += new System.EventHandler(this.stergeCu1ToolStripMenuItem_Click);
+            // 
+            // stergeTotToolStripMenuItem
+            // 
+            this.stergeTotToolStripMenuItem.Name = "stergeTotToolStripMenuItem";
+            this.stergeTotToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.stergeTotToolStripMenuItem.Text = "Sterge tot";
+            this.stergeTotToolStripMenuItem.Click += new System.EventHandler(this.stergeTotToolStripMenuItem_Click);
+            // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1675, 722);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.lb_valoareC);
             this.Controls.Add(this.btn_delete);
@@ -142,6 +171,7 @@ namespace Magazin_Hardware
             this.Name = "Cart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cart";
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +189,8 @@ namespace Magazin_Hardware
         private System.Windows.Forms.Label lb_valoareC;
         private System.Windows.Forms.ColumnHeader columnHeader52;
         private System.Windows.Forms.Button bt_exit;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem stergeCu1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stergeTotToolStripMenuItem;
     }
 }

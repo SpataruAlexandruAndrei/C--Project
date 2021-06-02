@@ -91,7 +91,6 @@ namespace Magazin_Hardware
                     comanda.Parameters.Add("Pret_Comanda", OleDbType.Double).Value = sum;
                     comanda.Parameters.Add("Comanda_Finalizata", OleDbType.Boolean).Value = false;
                     comanda.ExecuteNonQuery();
-                    MessageBox.Show("da");
 
 
                     comanda1.CommandText = "SELECT MAX(ID) FROM [Istoric_Produse_Comandate]";
@@ -112,14 +111,11 @@ namespace Magazin_Hardware
                         comanda2.ExecuteScalar();
                         comanda2.ExecuteNonQuery();
                         idIstoric++;
-                        //comanda.ExecuteNonQuery();
                     }
                     comanda1.ExecuteNonQuery();
-                    MessageBox.Show("da");
 
                     comanda1.CommandText = "DELETE FROM [Cos] WHERE ID_Client = " + idUser;
                     comanda1.ExecuteNonQuery();
-                    MessageBox.Show("da");
 
                 }
                 catch (OleDbException ex)
